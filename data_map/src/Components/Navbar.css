@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type=search] {
+    padding: 6px;
+    font-size: 16px;
+    border: solid 2px #FEFAE0;
+}
+
+button[type=submit] {
+    padding: 15px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    border: 2px solid #FEFAE0;
+    border-left: 0;
+    background-color: #FAEDCD;
+}
+
+button[type=submit]:hover {
+    background-color: #FEFAE0;
+}
+
+button[type=submit]:active {
+    background-color: #CCD5AE;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #CCD5AE;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.Menu {
+    background-color: #CCD5AE;
+    border: 0;
+    cursor: pointer;
+}
+
+.hamburgerMenu:hover,
+.hamburgerMenu:active {
+    fill: #FAEDCD;
+    transition: 0.2s;
+}
+
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #E9EDC9;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #D4A373;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #111;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+.menuList ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    background-color: #E9EDC9;
+}
+
+.menuList li {
+    padding: 20px;
+}
+
+.menuList a {
+    text-decoration: none;
+    color: #D4A373;
+    font-size: 1.5rem;
+}
+
+.menuList li:active,
+.menuList li:hover {
+    background-color: #FEFAE0;
+    color: #111;
+    transition: 0.3s;
+}
+
+@media only screen and (min-width: 769px) {
+    .Menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .menuList {
+        display: none;
+    }
+
+    .nav {
+        padding: 20px;
+    }
+}
