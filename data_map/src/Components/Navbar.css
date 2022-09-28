@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 input[type=search] {
     padding: 6px;
@@ -123,5 +119,13 @@ button[type=submit]:active {
 
     .nav {
         padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .searchBar {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
     }
 }

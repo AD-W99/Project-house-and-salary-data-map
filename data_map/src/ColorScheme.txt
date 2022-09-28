@@ -1,0 +1,6 @@
+Color Palette:
+    #CCD5AE;
+    #E9EDC9;
+    #FEFAEO;
+    #FAEDCD;
+    #D4A373;

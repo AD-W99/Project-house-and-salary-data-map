@@ -1,11 +1,22 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Navbar.css'
 
 export default function Navbar() {
     const [mySidebar, setMySidebar] = useState(false)
+    const [windowWidth, setWindowWidth] = useState({width: window.innerWidth})
     const styles = {
         width: mySidebar ? '250px' : '0'
     }
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth({width: window.innerWidth})
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        return () => window.removeEventListener('resize', handleResize)
+    })
 
     function openMenu() {
         if (!mySidebar) {
@@ -38,10 +49,25 @@ export default function Navbar() {
                         <a href="#">Contact</a>
                     </div>
                     <button className='Menu' onClick={openMenu}>
-                        <svg className='hamburgerMenu' width='40' height='40'>
-                            <rect width="100" height="8"></rect>
-                            <rect y="14" width="100" height="8"></rect>
-                            <rect y="28" width="100" height="8"></rect>
+                        <svg 
+                            className='hamburgerMenu'
+                            width={windowWidth.width < 340 ? '30' : '40'}
+                            height={windowWidth.width < 340 ? '30' : '40'}
+                        >
+                            <rect 
+                                width={windowWidth.width < 340 ? '50' : '100'}
+                                height={windowWidth.width < 340 ? '6' : '8'}
+                            ></rect>
+                            <rect
+                                y={windowWidth.width < 340 ? '10' : '14'}
+                                width={windowWidth.width < 340 ? '50' : '100'}
+                                height={windowWidth.width < 340 ? '6' : '8'}
+                                ></rect>
+                            <rect
+                                y={windowWidth.width < 340 ? '20' : '28'}
+                                width={windowWidth.width < 340 ? '50' : '100'}
+                                height={windowWidth.width < 340 ? '6' : '8'}
+                            ></rect>
                         </svg>
                     </button>
                     <div className='menuList'>
