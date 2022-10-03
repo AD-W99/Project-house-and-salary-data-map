@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './Navbar.css'
 
-export default function Navbar() {
+export default function Navbar(props) {
     const [mySidebar, setMySidebar] = useState(false)
     const [windowWidth, setWindowWidth] = useState({width: window.innerWidth})
     const styles = {
@@ -30,16 +30,25 @@ export default function Navbar() {
         }
     }
 
+    function handleSearch() {
+        const searchInput = document.getElementById('search-input')
+        props.mapDirections(searchInput.value)
+    }
+
     return (
         <>
             <header>
                 <nav className='nav'>
                     <form className='searchBar'>
                         <input 
-                            type='search'
+                            type='text'
                             placeholder='Search for state or city...'
+                            id='search-input'
                         />
-                        <button type='submit'></button>
+                        <button 
+                            onClick={handleSearch}
+                            type='button'
+                        ></button>
                     </form>
                     <div style={styles} className='sidebar'>
                         <a href="javascript:void(0)" className="closebtn" onClick={closeMenu}>&times;</a>
