@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import './Navbar.css'
 
-export default function Navbar(props) {
+export default function Navbar() {
     const [mySidebar, setMySidebar] = useState(false)
     const [windowWidth, setWindowWidth] = useState({width: window.innerWidth})
     const styles = {
@@ -30,26 +30,10 @@ export default function Navbar(props) {
         }
     }
 
-    function handleSearch() {
-        const searchInput = document.getElementById('search-input')
-        props.mapDirections(searchInput.value)
-    }
-
     return (
         <>
             <header>
                 <nav className='nav'>
-                    <form className='searchBar'>
-                        <input 
-                            type='text'
-                            placeholder='Search for state or city...'
-                            id='search-input'
-                        />
-                        <button 
-                            onClick={handleSearch}
-                            type='search'
-                        ></button>
-                    </form>
                     <div style={styles} className='sidebar'>
                         <a href="javascript:void(0)" className="closebtn" onClick={closeMenu}>&times;</a>
                         <a href="#">About</a>
@@ -79,11 +63,14 @@ export default function Navbar(props) {
                             ></rect>
                         </svg>
                     </button>
+                    <div>
+                        Hello
+                    </div>
                     <div className='menuList'>
                         <ul>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Clients</a></li>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">Settings</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>

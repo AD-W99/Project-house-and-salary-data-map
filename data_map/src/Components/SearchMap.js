@@ -1,25 +1,50 @@
-import React from 'react'
-import 'mapbox-gl/dist/mapbox-gl.css';
-import Map, { Marker, NavigationControl } from 'react-map-gl'
-
+import React, { useState, useRef, useCallback } from 'react'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
+import MapGL, { NavigationControl } from 'react-map-gl'
+import Geocoder from 'react-map-gl-geocoder'
 
 const MAP_TOKEN = "pk.eyJ1IjoiYWxleC13b29kIiwiYSI6ImNsOHN1YXB0czAwa3Mzd21udTI0MGhkMTAifQ.LNlWCNJrzBkvswp_-IKCkg"
 
 export default function SearchMap() {
+    const [viewport, setViewport] = useState({
+        latitude: 39.828175,
+        longitude: -98.5795,
+        zoom: 10
+    })
+    const mapRef = useRef()
+    const handleViewportChange = useCallback(
+        (newViewport) => setViewport(newViewport),
+        []
+    )
+    const handleGeocoderViewportChange = useCallback(
+        (newViewport) => {
+          const geocoderDefaultOverrides = { transitionDuration: 1000 }
+    
+          return handleViewportChange({
+            ...newViewport,
+            ...geocoderDefaultOverrides
+          })
+        },
+        [handleViewportChange]
+      )
 
     return (
-        <Map
-            initialViewState={{
-                latitude: 36.114647,
-                longitude: -115.172813,
-                zoom: 14
-            }}
-            style={{ width: 800, height: 600 }}
-            mapStyle="mapbox://styles/mapbox/streets-v11"
-            mapboxAccessToken={MAP_TOKEN}
+        <MapGL
+            ref={mapRef}
+            {...viewport}
+            width="600px"
+            height="400px"
+            onViewportChange={handleViewportChange}
+            mapboxApiAccessToken={MAP_TOKEN}
         >
-            <NavigationControl />
-            <Marker longitude={-115.172813} latitude={36.114647} color="green" />
-        </Map>
+            <Geocoder
+                mapRef={mapRef}
+                onViewportChange={handleGeocoderViewportChange}
+                mapboxApiAccessToken={MAP_TOKEN}
+                position="top-left"
+            ></Geocoder>
+            <NavigationControl position="bottom-right" />
+        </MapGL>
     )
 }
