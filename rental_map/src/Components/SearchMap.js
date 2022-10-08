@@ -1,5 +1,4 @@
 import {useState, useEffect, useRef} from 'react'
-// import Map, { NavigationControl } from 'react-map-gl'
 import "mapbox-gl/dist/mapbox-gl.css"
 import mapboxgl from 'mapbox-gl'
 
@@ -37,6 +36,8 @@ export default function SearchMap() {
       </>
     )
 }
+
+// import Map, { NavigationControl } from 'react-map-gl'
 
 /* <>
 <Map

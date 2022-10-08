@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 import SearchMap from './Components/SearchMap'
 import Graphs from './Components/Graphs'
+import Searchbar from './Components/Searchbar'
 import './App.css'
 
 function App() {
@@ -9,8 +10,11 @@ function App() {
     <>
       <Navbar />
       <div className='main_container'>
-        <SearchMap />
-        <Graphs />
+        <Searchbar />
+        <div className='secondary_container'>
+          <SearchMap />
+          <Graphs />
+        </div>
       </div>
     </>
   )
