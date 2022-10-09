@@ -36,10 +36,13 @@ export default function Navbar() {
                 <nav className='nav'>
                     <div style={styles} className='sidebar'>
                         <a href="javascript:void(0)" className="closebtn" onClick={closeMenu}>&times;</a>
+                        <a href="#">Home</a>
                         <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Clients</a>
+                        <a href="#">Account</a>
                         <a href="#">Contact</a>
+                    </div>
+                    <div>
+                        <li id='currentMenu'><a href="#">Home</a></li>
                     </div>
                     <button className='Menu' onClick={openMenu}>
                         <svg 
@@ -63,14 +66,11 @@ export default function Navbar() {
                             ></rect>
                         </svg>
                     </button>
-                    <div>
-                        Hello
-                    </div>
                     <div className='menuList'>
                         <ul>
+                            <li><a href="#">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Account</a></li>
-                            <li><a href="#">Settings</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>

@@ -21,5 +21,3 @@ function App() {
 }
 
 export default App;
-
-// https://blog.logrocket.com/using-mapbox-gl-js-react/

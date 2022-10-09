@@ -2,7 +2,6 @@ import {useState, useEffect, useRef} from 'react'
 import "mapbox-gl/dist/mapbox-gl.css"
 import mapboxgl from 'mapbox-gl'
 
-
 export default function SearchMap() {
   mapboxgl.accessToken='pk.eyJ1IjoiYWxleC13b29kIiwiYSI6ImNsOHN1YXB0czAwa3Mzd21udTI0MGhkMTAifQ.LNlWCNJrzBkvswp_-IKCkg'
   const mapContainer = useRef(null)
@@ -32,24 +31,10 @@ export default function SearchMap() {
 
     return (
       <>
-      <div ref={mapContainer} style={{width: 600, height: 400}} />
+      <div
+        ref={mapContainer}
+        style={{width: 600, height: 400}}
+      />
       </>
     )
 }
-
-// import Map, { NavigationControl } from 'react-map-gl'
-
-/* <>
-<Map
-  initialViewState={{
-    longitude: -98.5795,
-    latitude: 39.828175,
-    zoom: 3
-  }}
-  mapStyle="mapbox://styles/mapbox/streets-v9"
-  style={{width: 600, height: 400}}
-  mapboxAccessToken={MAP_TOKEN}
->
-  <NavigationControl />
-</Map>
-</> */
