@@ -17,20 +17,22 @@ export default function App() {
   return (
     <>
       <Navbar
-        homePage={homePage} 
         setHomePage={setHomePage}
-        aboutPage={aboutPage}
         setAboutPage={setAboutPage}
-        accountPage={accountPage}
         setAccountPage={setAccountPage}
-        contactPage={contactPage}
         setContactPage={setContactPage}
+        homePage={homePage}
+        aboutPage={aboutPage}
+        accountPage={accountPage}
+        contactPage={contactPage}
       />
       {homePage && <div className='main_container'>
         <Searchbar />
         <div className='secondary_container'>
           <SearchMap />
-          <Graphs />
+          <div className='graphs'>
+            <Graphs />
+          </div>
         </div>
       </div>}
       {aboutPage && <About />}

@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 
 export default function Navbar({
-    homePage,
     setHomePage,
-    aboutPage,
     setAboutPage,
-    accountPage,
     setAccountPage,
+    setContactPage,
+    homePage,
+    aboutPage,
+    accountPage,
     contactPage,
-    setContactPage
-    }) {
+}) {
     const [mySidebar, setMySidebar] = useState(false)
     const [windowWidth, setWindowWidth] = useState({width: window.innerWidth})
     const styles = {
@@ -19,7 +19,7 @@ export default function Navbar({
 
     useEffect(() => {
         function handleResize() {
-            setWindowWidth({width: window.innerWidth})
+            setWindowWidth({ width: window.innerWidth })
         }
 
         window.addEventListener('resize', handleResize)
@@ -78,15 +78,20 @@ export default function Navbar({
                         <a onClick={handleClick} href="#">Contact</a>
                     </div>
                     <div>
-                        <li id='currentMenu'><a href="#">Home</a></li>
+                        <li id='currentMenu'><a href="#">
+                            {homePage && 'Home'}
+                            {aboutPage && 'About'}
+                            {accountPage && 'Account'}
+                            {contactPage && 'Contact'}
+                        </a></li>
                     </div>
                     <button className='Menu' onClick={openMenu}>
-                        <svg 
+                        <svg
                             className='hamburgerMenu'
                             width={windowWidth.width < 340 ? '30' : '40'}
                             height={windowWidth.width < 340 ? '30' : '40'}
                         >
-                            <rect 
+                            <rect
                                 width={windowWidth.width < 340 ? '50' : '100'}
                                 height={windowWidth.width < 340 ? '6' : '8'}
                             ></rect>
@@ -94,7 +99,7 @@ export default function Navbar({
                                 y={windowWidth.width < 340 ? '10' : '14'}
                                 width={windowWidth.width < 340 ? '50' : '100'}
                                 height={windowWidth.width < 340 ? '6' : '8'}
-                                ></rect>
+                            ></rect>
                             <rect
                                 y={windowWidth.width < 340 ? '20' : '28'}
                                 width={windowWidth.width < 340 ? '50' : '100'}

@@ -60,3 +60,19 @@
     color: #313639;
     font-size: 1rem;
 }
+
+@media only screen and (max-width: 640px) {
+    .searchbars_wrapper {
+        flex-direction: column;
+    }
+
+    .left_searchbar {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .right_searchbar {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}

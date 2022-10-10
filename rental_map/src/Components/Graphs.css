@@ -1,0 +1,4 @@
+.graphs_wrapper {
+    display: flex;
+    justify-content: space-around;
+}

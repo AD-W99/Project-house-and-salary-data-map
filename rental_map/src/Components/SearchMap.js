@@ -2,6 +2,7 @@ import {useState, useEffect, useRef} from 'react'
 import "mapbox-gl/dist/mapbox-gl.css"
 import mapboxgl from 'mapbox-gl'
 
+
 export default function SearchMap() {
   mapboxgl.accessToken='pk.eyJ1IjoiYWxleC13b29kIiwiYSI6ImNsOHN1YXB0czAwa3Mzd21udTI0MGhkMTAifQ.LNlWCNJrzBkvswp_-IKCkg'
   const mapContainer = useRef(null)
@@ -33,7 +34,7 @@ export default function SearchMap() {
       <>
       <div
         ref={mapContainer}
-        style={{width: 600, height: 400}}
+        style={{width: '100vw', height: 400}}
       />
       </>
     )

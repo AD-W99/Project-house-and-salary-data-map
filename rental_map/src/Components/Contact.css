@@ -1,0 +1,22 @@
+.contact_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 50%;
+    margin: auto;
+}
+
+.contact_wrapper h2 {
+    background-color: #E9EDC9;
+    color: #313639;
+    padding: 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contact_wrapper a {
+    text-decoration: none;
+    color: green;
+}
