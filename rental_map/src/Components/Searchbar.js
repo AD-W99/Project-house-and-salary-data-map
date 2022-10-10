@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import useInput from './Hooks/useInput'
 import './Searchbar.css'
 
 export default function Searchbar() {
     const searchResults = useInput('')
     const [leftSearch, setLeftSearch] = useState(false)
-    const [rightSearch, setRightSearch] = useState(false)
+    const leftInput = useRef(null)
+    const rightInput = useRef(null)
 
     function handleLeftSearch(e) {
         if (e.target.value) {
@@ -15,12 +16,9 @@ export default function Searchbar() {
         }
     }
 
-    function handleRightSearch(e) {
-        if (e.target.value) {
-            setRightSearch(true)
-        } else {
-            setRightSearch(false)
-        }
+    function handleClick() {
+        console.log(leftInput.current.value)
+        console.log(rightInput.current.value)
     }
 
     return (
@@ -28,6 +26,7 @@ export default function Searchbar() {
             <div className='searchbars_wrapper'>
                 <div className='left_searchbar'>
                     <input
+                        ref={leftInput}
                         onInput={handleLeftSearch}
                         className={leftSearch ? 'current_search' : 'place_search'}
                         type='search'
@@ -35,6 +34,7 @@ export default function Searchbar() {
                         {...searchResults}
                     />
                     {searchResults.results?.length > 0 && (
+
                         <div className='searchResults_wrapper'>{searchResults.results.map((result, index) => {
                             return <li
                                     key={index}
@@ -48,14 +48,14 @@ export default function Searchbar() {
                 </div>
                 <div className='right_searchbar'>
                     <input
-                        onInput={handleRightSearch}
-                        className={rightSearch ? 'current_search' : 'place_search'}
+                        ref={rightInput}
+                        className='place_search'
                         type='search'
                         placeholder='Search for job title'
                     />
                 </div>
             </div>
-            <button className='search_btn'>Search</button>
+            <button className='search_btn' onClick={handleClick}>Search</button>
         </div>
     )
 }

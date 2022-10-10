@@ -1,7 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import './Navbar.css'
 
-export default function Navbar() {
+export default function Navbar({
+    homePage,
+    setHomePage,
+    aboutPage,
+    setAboutPage,
+    accountPage,
+    setAccountPage,
+    contactPage,
+    setContactPage
+    }) {
     const [mySidebar, setMySidebar] = useState(false)
     const [windowWidth, setWindowWidth] = useState({width: window.innerWidth})
     const styles = {
@@ -30,16 +39,43 @@ export default function Navbar() {
         }
     }
 
+    function handleClick(e) {
+        if (e.target.innerText === 'Home') {
+            setHomePage(true)
+            setAboutPage(false)
+            setAccountPage(false)
+            setContactPage(false)
+        }
+        if (e.target.innerText === 'About') {
+            setAboutPage(true)
+            setHomePage(false)
+            setAccountPage(false)
+            setContactPage(false)
+        }
+        if (e.target.innerText === 'Account') {
+            setAccountPage(true)
+            setHomePage(false)
+            setAboutPage(false)
+            setContactPage(false)
+        }
+        if (e.target.innerText === 'Contact') {
+            setContactPage(true)
+            setHomePage(false)
+            setAboutPage(false)
+            setAccountPage(false)
+        }
+    }
+
     return (
         <>
             <header>
                 <nav className='nav'>
                     <div style={styles} className='sidebar'>
                         <a href="javascript:void(0)" className="closebtn" onClick={closeMenu}>&times;</a>
-                        <a href="#">Home</a>
-                        <a href="#">About</a>
-                        <a href="#">Account</a>
-                        <a href="#">Contact</a>
+                        <a onClick={handleClick} href="#">Home</a>
+                        <a onClick={handleClick} href="#">About</a>
+                        <a onClick={handleClick} href="#">Account</a>
+                        <a onClick={handleClick} href="#">Contact</a>
                     </div>
                     <div>
                         <li id='currentMenu'><a href="#">Home</a></li>
@@ -68,10 +104,10 @@ export default function Navbar() {
                     </button>
                     <div className='menuList'>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li onClick={handleClick}><a href="#">Home</a></li>
+                            <li onClick={handleClick}><a href="#">About</a></li>
+                            <li onClick={handleClick}><a href="#">Account</a></li>
+                            <li onClick={handleClick}><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
