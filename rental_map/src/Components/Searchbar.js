@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import useInput from './Hooks/useInput'
 import './Searchbar.css'
 
-export default function Searchbar() {
+export default function Searchbar({ mapCoordinates, setMapCoordinates }) {
     const searchResults = useInput('')
     const [leftSearch, setLeftSearch] = useState(false)
     const leftInput = useRef(null)
@@ -16,7 +16,7 @@ export default function Searchbar() {
         }
     }
 
-    function handleClick() {
+    function handleBtnClick() {
         console.log(leftInput.current.value)
         console.log(rightInput.current.value)
     }
@@ -34,12 +34,15 @@ export default function Searchbar() {
                         {...searchResults}
                     />
                     {searchResults.results?.length > 0 && (
-
                         <div className='searchResults_wrapper'>{searchResults.results.map((result, index) => {
                             return <li
                                     key={index}
                                     onClick={() => {
                                         searchResults.setValue(result.place_name)
+                                        setMapCoordinates({
+                                            longitude: searchResults.results[index].center[0],
+                                            latitude: searchResults.results[index].center[1]
+                                        })
                                         searchResults.setResults([])
                                     }}
                                     >{result.place_name}</li>
@@ -55,7 +58,7 @@ export default function Searchbar() {
                     />
                 </div>
             </div>
-            <button className='search_btn' onClick={handleClick}>Search</button>
+            <button className='search_btn' onClick={handleBtnClick}>Search</button>
         </div>
     )
 }

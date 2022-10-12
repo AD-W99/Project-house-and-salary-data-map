@@ -13,6 +13,10 @@ export default function App() {
   const [aboutPage, setAboutPage] = useState(false)
   const [accountPage, setAccountPage] = useState(false)
   const [contactPage, setContactPage] = useState(false)
+  const [mapCoordinates, setMapCoordinates] = useState({
+    longitude: 0,
+    latitude: 0
+  })
 
   return (
     <>
@@ -27,9 +31,12 @@ export default function App() {
         contactPage={contactPage}
       />
       {homePage && <div className='main_container'>
-        <Searchbar />
+        <Searchbar
+          mapCoordinates={mapCoordinates}
+          setMapCoordinates={setMapCoordinates}
+        />
         <div className='secondary_container'>
-          <SearchMap />
+          <SearchMap mapCoordinates={mapCoordinates} />
           <div className='graphs'>
             <Graphs />
           </div>

@@ -18,15 +18,15 @@
 }
 
 .place_search {
-    border: 2px solid #FAEDCD;
+    border: 2px solid #CCC5B9;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     width: 300px;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .current_search {
-    border: 2px solid #FAEDCD;
+    border: 2px solid #CCC5B9;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     width: 300px;
@@ -35,7 +35,7 @@
 }
 
 .searchResults_wrapper {
-    background-color: #E9EDC9;
+    background-color: #A4BAB7;
     width: 300px;
     position: absolute;
     z-index: 1;
@@ -46,19 +46,21 @@
     padding: 0.2rem 0 0.2rem 0.5rem;
     color: #313639;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .searchResults_wrapper li:hover {
-    background-color: #FEFAE0;
+    background-color: #416788;
 }
 
 .search_btn {
     margin: 0 0 1rem 0;
     padding: 0.5rem 1rem;
-    background-color: #CCD5AE;
+    background-color: #416788;
     border: 0;
-    color: #313639;
+    color: whitesmoke;
     font-size: 1rem;
+    border-radius: 0.5rem;
 }
 
 @media only screen and (max-width: 640px) {

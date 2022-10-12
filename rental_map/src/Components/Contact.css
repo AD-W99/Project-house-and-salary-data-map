@@ -8,7 +8,7 @@
 }
 
 .contact_wrapper h2 {
-    background-color: #E9EDC9;
+    background-color: #A4BAB7;
     color: #313639;
     padding: 3rem;
     border-radius: 1rem;
@@ -18,5 +18,5 @@
 
 .contact_wrapper a {
     text-decoration: none;
-    color: green;
+    color: white;
 }

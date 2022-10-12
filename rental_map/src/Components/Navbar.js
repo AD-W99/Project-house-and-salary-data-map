@@ -92,15 +92,18 @@ export default function Navbar({
                             height={windowWidth.width < 340 ? '30' : '40'}
                         >
                             <rect
+                                style={{fill: '#EFF2C0'}}
                                 width={windowWidth.width < 340 ? '50' : '100'}
                                 height={windowWidth.width < 340 ? '6' : '8'}
                             ></rect>
                             <rect
+                                style={{fill: '#EFF2C0'}}
                                 y={windowWidth.width < 340 ? '10' : '14'}
                                 width={windowWidth.width < 340 ? '50' : '100'}
                                 height={windowWidth.width < 340 ? '6' : '8'}
                             ></rect>
                             <rect
+                                style={{fill: '#EFF2C0'}}
                                 y={windowWidth.width < 340 ? '20' : '28'}
                                 width={windowWidth.width < 340 ? '50' : '100'}
                                 height={windowWidth.width < 340 ? '6' : '8'}

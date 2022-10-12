@@ -1,7 +1,6 @@
 import React from 'react'
 import './Graphs.css'
 
-
 export default function Graphs() {
 
     return (

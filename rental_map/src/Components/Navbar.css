@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #CCD5AE;
+    background-color: #A4BAB7;
     padding: 1rem 0;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .Menu {
-    background-color: #CCD5AE;
+    background-color: #A4BAB7;
     border: 0;
     cursor: pointer;
 }
@@ -24,7 +24,7 @@
     z-index: 1; /* Stay on top */
     top: 0;
     right: 0;
-    background-color: #E9EDC9;
+    background-color: #A4BAB7;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
@@ -35,14 +35,14 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #313639;
+    color: black;
     display: block;
     transition: 0.3s;
   }
   
   /* When you mouse over the navigation links, change their color */
   .sidebar a:not(:first-child):hover {
-    background-color: #FEFAE0;
+    background-color: #416788;
   }
   
   /* Position and style the close button (top right corner) */
@@ -56,16 +56,16 @@
 
 #currentMenu {
     list-style: none;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    padding: 20px 40px 20px 20px;
-    background-color: #FEFAE0;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    padding: 20px 20px 20px 20px;
+    background-color: #416788;
     font-size: 1.5rem;
 }
 
 #currentMenu a {
     text-decoration: none;
-    color: #313639;
+    color: white;
     cursor: initial;
 }
 
@@ -77,23 +77,23 @@
 
 .menuList li {
     padding: 20px;
-    background-color: #E9EDC9;
+    background-color: #416788;
 }
 
 ul li:first-child {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
 }
 
 .menuList a {
     text-decoration: none;
-    color: #313639;
+    color: white;
     font-size: 1.5rem;
 }
 
 .menuList li:active,
 .menuList li:hover {
-    background-color: #FEFAE0;
+    background-color: #1C0B19;
     transition: 0.3s;
 }
 

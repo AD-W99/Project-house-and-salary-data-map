@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter Tight', sans-serif;
 }
 
 .main_container {
@@ -19,7 +22,8 @@ body {
 }
 
 .graphs {
-    background-color: #E9EDC9;
+    color: #313639;
+    background-color: #A4BAB7;
     margin: 2rem 0;
     border-radius: 1rem;
     width: 80%;
