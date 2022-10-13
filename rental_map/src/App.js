@@ -14,8 +14,9 @@ export default function App() {
   const [accountPage, setAccountPage] = useState(false)
   const [contactPage, setContactPage] = useState(false)
   const [mapCoordinates, setMapCoordinates] = useState({
-    longitude: 0,
-    latitude: 0
+    longitude: -98.5795,
+    latitude: 39.828175,
+    zoom: 3
   })
 
   return (
@@ -31,10 +32,7 @@ export default function App() {
         contactPage={contactPage}
       />
       {homePage && <div className='main_container'>
-        <Searchbar
-          mapCoordinates={mapCoordinates}
-          setMapCoordinates={setMapCoordinates}
-        />
+        <Searchbar setMapCoordinates={setMapCoordinates} />
         <div className='secondary_container'>
           <SearchMap mapCoordinates={mapCoordinates} />
           <div className='graphs'>

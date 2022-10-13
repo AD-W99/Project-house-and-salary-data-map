@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import useInput from './Hooks/useInput'
 import './Searchbar.css'
 
-export default function Searchbar({ mapCoordinates, setMapCoordinates }) {
+export default function Searchbar({ setMapCoordinates }) {
     const searchResults = useInput('')
     const [leftSearch, setLeftSearch] = useState(false)
     const leftInput = useRef(null)
@@ -41,7 +41,8 @@ export default function Searchbar({ mapCoordinates, setMapCoordinates }) {
                                         searchResults.setValue(result.place_name)
                                         setMapCoordinates({
                                             longitude: searchResults.results[index].center[0],
-                                            latitude: searchResults.results[index].center[1]
+                                            latitude: searchResults.results[index].center[1],
+                                            zoom: 9
                                         })
                                         searchResults.setResults([])
                                     }}
