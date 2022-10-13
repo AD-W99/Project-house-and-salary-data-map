@@ -69,6 +69,40 @@
     cursor: initial;
 }
 
+@keyframes currentMenu1 {
+    from {
+        margin-left: -100%;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes currentMenu2 {
+    from {
+        margin-left: -100%;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+.animateMenu1 {
+    animation-name: currentMenu1;
+    animation-duration: 1s;
+}
+
+.animateMenu2 {
+    animation-name: currentMenu2;
+    animation-duration: 1s;
+}
+
 .menuList ul {
     list-style: none;
     display: flex;

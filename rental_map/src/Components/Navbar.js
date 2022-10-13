@@ -13,6 +13,7 @@ export default function Navbar({
 }) {
     const [mySidebar, setMySidebar] = useState(false)
     const [windowWidth, setWindowWidth] = useState({width: window.innerWidth})
+    const [menuChanged, setMenuChanged] = useState(true)
     const styles = {
         width: mySidebar ? '250px' : '0'
     }
@@ -40,6 +41,7 @@ export default function Navbar({
     }
 
     function handleClick(e) {
+        setMenuChanged(prevState => !prevState)
         if (e.target.innerText === 'Home') {
             setHomePage(true)
             setAboutPage(false)
@@ -78,11 +80,15 @@ export default function Navbar({
                         <a onClick={handleClick} href="#">Contact</a>
                     </div>
                     <div>
-                        <li id='currentMenu'><a href="#">
+                        <li
+                            id='currentMenu'
+                            className={menuChanged ? 'animateMenu1' : 'animateMenu2'}
+                        ><a href="#">
                             {homePage && 'Home'}
                             {aboutPage && 'About'}
                             {accountPage && 'Account'}
                             {contactPage && 'Contact'}
+                            
                         </a></li>
                     </div>
                     <button className='Menu' onClick={openMenu}>
