@@ -2,3 +2,41 @@
     display: flex;
     justify-content: space-around;
 }
+
+.graphs_wrapper div {
+    padding: 0 4rem;
+}
+
+.slideShow {
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.currentSlide {
+    display: block;
+    list-style: none;
+    padding: 0;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #416788;
+    padding: 0.6rem 1rem 1rem;
+    border-radius: 1rem;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
