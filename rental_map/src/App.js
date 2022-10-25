@@ -13,6 +13,8 @@ export default function App() {
   const [aboutPage, setAboutPage] = useState(false)
   const [accountPage, setAccountPage] = useState(false)
   const [contactPage, setContactPage] = useState(false)
+  const [address, setAddress] = useState('')
+  const [job, setJob] = useState('')
   const [mapCoordinates, setMapCoordinates] = useState({
     longitude: -98.5795,
     latitude: 39.828175,
@@ -32,11 +34,18 @@ export default function App() {
         contactPage={contactPage}
       />
       {homePage && <div className='main_container'>
-        <Searchbar setMapCoordinates={setMapCoordinates} />
+        <Searchbar
+          setMapCoordinates={setMapCoordinates}
+          setAddress={setAddress}
+          setJob={setJob}
+        />
         <div className='secondary_container'>
           <SearchMap mapCoordinates={mapCoordinates} />
           <div className='graphs'>
-            <Graphs />
+            <Graphs
+              address={address}
+              job={job}
+            />
           </div>
         </div>
       </div>}

@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react'
 import useInput from './Hooks/useInput'
+import StateSelector from './StateSelector'
 import './Searchbar.css'
 
-export default function Searchbar({ setMapCoordinates }) {
+export default function Searchbar({ setMapCoordinates, setAddress, setJob }) {
     const searchResults = useInput('')
     const [leftSearch, setLeftSearch] = useState(false)
     const leftInput = useRef(null)
@@ -17,8 +18,13 @@ export default function Searchbar({ setMapCoordinates }) {
     }
 
     function handleBtnClick() {
-        console.log(leftInput.current.value)
-        console.log(rightInput.current.value)
+        if (leftInput.current.value === '' || rightInput.current.value === '') {
+            alert("Please fill out both searchbars!")
+        } else {
+            
+            setAddress(() => StateSelector(leftInput.current.value))
+            setJob(rightInput.current.value)
+        }
     }
 
     return (

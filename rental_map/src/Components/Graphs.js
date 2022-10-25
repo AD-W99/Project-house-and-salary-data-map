@@ -1,8 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Graphs.css'
 
-export default function Graphs() {
+export default function Graphs({address, job}) {
     const [slideIndex, setSlideIndex] = useState(1)
+
+    console.log(address)
+ 
+    // const options = {
+    //     method: 'GET',
+    //     headers: {
+    //         'X-RapidAPI-Key': '567cdadf71msh2c219447499877dp105458jsnc7213bf158b2',
+    //         'X-RapidAPI-Host': 'mashvisor-api.p.rapidapi.com'
+    //     }
+    // }
+    
+    // useEffect(() => {
+    //     fetch(`https://mashvisor-api.p.rapidapi.com/rental-rates?state=${}&source=traditional`, options)
+    //         .then(response => response.json())
+    //         .then(response => console.log(response))
+    //         .catch(err => console.error(err))
+    // }, [address])
 
     function changeSlide(num) {
         setSlideIndex(prevState => {
@@ -20,41 +37,41 @@ export default function Graphs() {
     return (
         <div className='graphs_wrapper'>
             <div className='slideShow'> 
-                <h2>Example Rental</h2>
+                <h2>Rental Info</h2>
                 <ul className={slideIndex === 1 ? 'currentSlide' : 'slide'}>
-                    <li>Studio</li>
-                    <li>Maximum Price: </li>
+                    <li><b>Studio</b></li>
+                    <li>Max Price: </li>
                     <li>Median Price: </li>
-                    <li>Minimum Price: </li>
+                    <li>Min Price: </li>
                 </ul>
                 <ul className={slideIndex === 2 ? 'currentSlide' : 'slide'}>
-                    <li>1-Bedroom</li>
-                    <li>Maximum Price: </li>
+                    <li><b>1-Bedroom</b></li>
+                    <li>Max Price: </li>
                     <li>Median Price: </li>
-                    <li>Minimum Price: </li>
+                    <li>Min Price: </li>
                 </ul>
                 <ul className={slideIndex === 3 ? 'currentSlide' : 'slide'}>
-                    <li>2-Bedroom</li>
-                    <li>Maximum Price: </li>
+                    <li><b>2-Bedroom</b></li>
+                    <li>Max Price: </li>
                     <li>Median Price: </li>
-                    <li>Minimum Price: </li>
+                    <li>Min Price: </li>
                 </ul>
                 <ul className={slideIndex === 4 ? 'currentSlide' : 'slide'}>
-                    <li>3-Bedroom</li>
-                    <li>Maximum Price: </li>
+                    <li><b>3-Bedroom</b></li>
+                    <li>Max Price: </li>
                     <li>Median Price: </li>
-                    <li>Minimum Price: </li>
+                    <li>Min Price: </li>
                 </ul>
                 <a className='prev' onClick={() => changeSlide(-1)}>&#10094;</a>
                 <a className='next' onClick={() => changeSlide(1)}>&#10095;</a>
             </div>
             <div>
-                <h2>Example Job</h2>
+                <h2>Job Info</h2>
                 <ul>
                     <li>Location: </li>
-                    <li>Maximum Salary: </li>
+                    <li>Max Salary: </li>
                     <li>Median Salary: </li>
-                    <li>Minimum Salary: </li>
+                    <li>Min Salary: </li>
                 </ul>
             </div>
         </div>

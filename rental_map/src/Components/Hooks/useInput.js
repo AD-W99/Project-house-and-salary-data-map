@@ -9,7 +9,7 @@ export default function useInput(initialValue) {
         setValue(e.target.value)
 
         try {
-            const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/${e.target.value}.json?access_token=${MAP_TOKEN}&autocomplete=true&country=US`
+            const endpoint = `https://api.mapbox.com/geocoding/v5/mapbox.places/${e.target.value}.json?country=us&types=place%2Cregion&autocomplete=true&access_token=${MAP_TOKEN}`
             const response = await fetch(endpoint)
             const suggestions = await response.json()
             setResults(suggestions?.features)
