@@ -54,7 +54,7 @@ export default function SearchMap({ mapCoordinates }) {
       <>
       <div
         ref={mapContainer}
-        style={{width: '100vw', height: 400}}
+        style={{width: '98vw', height: 400}}
       />
       </>
     )

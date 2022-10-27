@@ -7,7 +7,7 @@ export default function Searchbar({ setMapCoordinates, setAddress, setJob }) {
     const searchResults = useInput('')
     const [leftSearch, setLeftSearch] = useState(false)
     const leftInput = useRef(null)
-    const rightInput = useRef(null)
+    const rightInput = useRef([null, null])
 
     function handleLeftSearch(e) {
         if (e.target.value) {
@@ -21,9 +21,8 @@ export default function Searchbar({ setMapCoordinates, setAddress, setJob }) {
         if (leftInput.current.value === '' || rightInput.current.value === '') {
             alert("Please fill out both searchbars!")
         } else {
-            
             setAddress(() => StateSelector(leftInput.current.value))
-            setJob(rightInput.current.value)
+            setJob([rightInput.current.value, leftInput.current.value])
         }
     }
 
