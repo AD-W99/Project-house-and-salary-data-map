@@ -27,7 +27,6 @@ export default function Graphs({address, job}) {
     }
     useEffect(() => {
         if (didFirstRender_Adress.current) {
-            console.log("made it - address")
             fetch(address, adressOptions)
             .then(response => response.json())
             .then(response => {
@@ -42,7 +41,6 @@ export default function Graphs({address, job}) {
 
     useEffect(() => {
         if (didFirstRender_Job.current) {
-            console.log("made it - job")
             let jobTitle = job[0]
             let location = job[1]
 
