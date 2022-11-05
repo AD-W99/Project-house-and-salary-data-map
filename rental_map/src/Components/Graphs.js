@@ -25,8 +25,6 @@ export default function Graphs({address, job}) {
             'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
         }
     }
-    console.log(didFirstRender_Adress)
-    console.log(didFirstRender_Job)
     useEffect(() => {
         if (didFirstRender_Adress.current) {
             console.log("made it - address")
