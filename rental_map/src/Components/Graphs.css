@@ -19,10 +19,24 @@
     display: none;
 }
 
+@keyframes animateCurrentSlide {
+    from {
+        margin-left: -100%;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
 .currentSlide {
     list-style: none;
     padding: 0;
     text-align: center;
+    animation-name: animateCurrentSlide;
+    animation-duration: 1s;
 }
 
 .prev,
