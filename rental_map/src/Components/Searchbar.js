@@ -36,7 +36,7 @@ export default function Searchbar({ setMapCoordinates, setAddress, setJob }) {
                         className={leftSearch ? 'current_search' : 'place_search'}
                         type='search'
                         placeholder='Search for U.S. state or city'
-                        {...searchResults}
+                        {...searchResults} // This allows the suggestions for cities and states to display under the left search bar.
                     />
                     {searchResults.results?.length > 0 && (
                         <div className='searchResults_wrapper'>{searchResults.results.map((result, index) => {
